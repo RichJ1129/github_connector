@@ -14,57 +14,63 @@
                             {{ search_form.submit }}
                             <br>
                         </form>
-                            {% if results %}
-                                {% for user in results %}
+                        {% if results %}
+                            {% for user in results %}
                                 <ul class="list-group" style="width: 16rem;">
                                     <li class="list-group-item d-flex justify-content-end">{{ user.username }}
                                         {{ form.hidden_tag() }}
                                         <p>&nbsp;</p>
-                                        <form action="{{ url_for('other_profile', username=user.username) }}" method="get">
+                                        <form action="{{ url_for('other_profile', username=user.username) }}"
+                                              method="get">
                                             {{ form.submit(value='View', class_='btn btn-outline-primary') }}
                                         </form>
                                         <p>&nbsp;</p>
-                                        <form action="{{ url_for('remove_connection', username=user.username) }}" method="post">
+                                        <form action="{{ url_for('remove_connection', username=user.username) }}"
+                                              method="post">
                                             {{ form.submit(value='Remove', class_='btn btn-outline-danger') }}
                                         </form>
                                     </li>
                                 </ul>
-                                {% endfor %}
-                            {% endif %}
+                            {% endfor %}
+                        {% endif %}
 
-                            {% if not results %}
-                                {% for person in usernames %}
-                                    {% if current_user.is_connected(person) %}
+                        {% if not results %}
+                            {% for person in usernames %}
+                                {% if current_user.is_connected(person) %}
                                     <ul class="list-group" style="width: 16rem;">
                                         <li class="list-group-item d-flex justify-content-end">{{ person.username }}
                                             {{ form.hidden_tag() }}
                                             <p>&nbsp;</p>
-                                            <form action="{{ url_for('other_profile', username=person.username) }}" method="get">
+                                            <form action="{{ url_for('other_profile', username=person.username) }}"
+                                                  method="get">
                                                 {{ form.submit(value='View', class_='btn btn-outline-primary') }}
                                             </form>
                                             <p>&nbsp;</p>
-                                            <form action="{{ url_for('remove_connection', username=person.username) }}" method="post">
+                                            <form action="{{ url_for('remove_connection', username=person.username) }}"
+                                                  method="post">
                                                 {{ form.submit(value='Remove', class_='btn btn-outline-danger') }}
                                             </form>
                                         </li>
                                     </ul>
-                                    {% elif person.is_connected(current_user) %}
+                                {% elif person.is_connected(current_user) %}
                                     <ul class="list-group" style="width: 16rem;">
                                         <li class="list-group-item d-flex justify-content-end">{{ person.username }}
                                             {{ form.hidden_tag() }}
                                             <p>&nbsp;</p>
-                                            <form action="{{ url_for('other_profile', username=person.username) }}" method="get">
+                                            <form action="{{ url_for('other_profile', username=person.username) }}"
+                                                  method="get">
                                                 {{ form.submit(value='View', class_='btn btn-outline-primary') }}
                                             </form>
                                             <p>&nbsp;</p>
-                                            <form action="{{ url_for('remove_connection', username=person.username) }}" method="post">
+                                            <form action="{{ url_for('remove_connection', username=person.username) }}"
+                                                  method="post">
                                                 {{ form.submit(value='Remove', class_='btn btn-outline-danger') }}
                                             </form>
                                         </li>
                                     </ul>
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

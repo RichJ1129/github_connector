@@ -65,34 +65,34 @@
                     {% endif %}
                     {{ post.likes.count() }} likes
                 {% endfor %}
-{#                <ul class="nav nav-pills justify-content-center">#}
-{#                    {% if prev_url %}#}
-{#                        <li class="previous disabled">#}
-{#                            <a class="nav-item nav-link" href="{{ prev_url or '#' }}">#}
-{#                                <span aria-hidden="true"></span> Previous#}
-{#                            </a>#}
-{#                        </li>#}
-{#                    {% endif %}#}
-{#                    {% if next_url %}#}
-{#                        <li class="next disabled">#}
-{#                            <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Next <span#}
-{#                                    aria-hidden="true"></span>#}
-{#                            </a>#}
-{#                        </li>#}
-{#                    {% endif %}#}
-{#                </ul>#}
+                {#                <ul class="nav nav-pills justify-content-center">#}
+                {#                    {% if prev_url %}#}
+                {#                        <li class="previous disabled">#}
+                {#                            <a class="nav-item nav-link" href="{{ prev_url or '#' }}">#}
+                {#                                <span aria-hidden="true"></span> Previous#}
+                {#                            </a>#}
+                {#                        </li>#}
+                {#                    {% endif %}#}
+                {#                    {% if next_url %}#}
+                {#                        <li class="next disabled">#}
+                {#                            <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Next <span#}
+                {#                                    aria-hidden="true"></span>#}
+                {#                            </a>#}
+                {#                        </li>#}
+                {#                    {% endif %}#}
+                {#                </ul>#}
                 <br>
-<div class="text-center">
-                    <div class="btn-group justify-content-center" role="group" >
-                    {% if prev_url %}
-                        <a role="button" class="btn btn-secondary" href="{{ prev_url or '#' }}">Prev</a>
-                    {% endif %}
-                    {% if next_url %}
-                        <a role="button" class="btn btn-secondary" href="{{ next_url or '#' }}">Next</a>
-                    {% endif %}
-                </div>
+                <div class="text-center">
+                    <div class="btn-group" role="group">
+                        {% if prev_url %}
+                            <a role="button" class="btn btn-secondary" href="{{ prev_url or '#' }}">Prev</a>
+                        {% endif %}
+                        {% if next_url %}
+                            <a role="button" class="btn btn-secondary" href="{{ next_url or '#' }}">Next</a>
+                        {% endif %}
+                    </div>
 
-</div>
+                </div>
 
             </div>
             <div class="col-sm-3">
