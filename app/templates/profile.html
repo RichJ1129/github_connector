@@ -66,21 +66,32 @@
                     {{ post.likes.count() }} likes
                 {% endfor %}
                 <ul class="nav nav-pills justify-content-center">
-                {% if prev_url %}
-                    <li class="previous disabled">
-                        <a class="nav-item nav-link" href="{{ prev_url or '#' }}">
-                            <span aria-hidden="true"></span> Previous
-                        </a>
-                    </li>
-                {% endif %}
+                    {% if prev_url %}
+                        <li class="previous disabled">
+                            <a class="nav-item nav-link" href="{{ prev_url or '#' }}">
+                                <span aria-hidden="true"></span> Previous
+                            </a>
+                        </li>
+                    {% endif %}
                     {% if next_url %}
-                    <li class="next disabled">
-                        <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Next <span
-                                aria-hidden="true"></span>
-                        </a>
-                    </li>
-                {% endif %}
+                        <li class="next disabled">
+                            <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Next <span
+                                    aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    {% if prev_url %}
+                    <button type="button" class="btn btn-secondary" href="{{ prev_url or '#' }}">Prev</button>
+                    {% endif %}
+                                    {% if next_url %}
+
+                    <button type="button" class="btn btn-secondary"  href="{{ next_url or '#' }}">Next</button>
+                                    {% endif %}
+
+                </div>
 
 
             </div>
@@ -106,20 +117,20 @@
                     {% endif %}
                 {% endfor %}
                 <ul class="nav nav-pills justify-content-center">
-                {% if prev_url_conn %}
-                    <li class="previous disabled">
-                        <a class="nav-item nav-link" href="{{ prev_url_conn or '#' }}">
-                            <span aria-hidden="true"></span> Previous
-                        </a>
-                    </li>
-                {% endif %}
-                {% if next_url_conn %}
-                    <li class="next disabled">
-                        <a class="nav-item nav-link" href="{{ next_url_conn or '#' }}"> Next <span
-                                aria-hidden="true"></span>
-                        </a>
-                    </li>
-                {% endif %}
+                    {% if prev_url_conn %}
+                        <li class="previous disabled">
+                            <a class="nav-item nav-link" href="{{ prev_url_conn or '#' }}">
+                                <span aria-hidden="true"></span> Previous
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if next_url_conn %}
+                        <li class="next disabled">
+                            <a class="nav-item nav-link" href="{{ next_url_conn or '#' }}"> Next <span
+                                    aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
 
             </div>
