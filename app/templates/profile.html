@@ -66,16 +66,20 @@
                     {{ post.likes.count() }} likes
                 {% endfor %}
                 <ul class="nav nav-pills justify-content-center">
-                    <li class="previous{% if not prev_url %} disabled{% endif %}">
+                {% if prev_url %}
+                    <li class="previous disabled">
                         <a class="nav-item nav-link" href="{{ prev_url or '#' }}">
-                            <span aria-hidden="true"></span> Newer posts
+                            <span aria-hidden="true"></span> Previous
                         </a>
                     </li>
-                    <li class="next{% if not next_url %} disabled{% endif %}">
-                        <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Older posts <span
+                {% endif %}
+                    {% if next_url %}
+                    <li class="next disabled">
+                        <a class="nav-item nav-link" href="{{ next_url or '#' }}"> Next <span
                                 aria-hidden="true"></span>
                         </a>
                     </li>
+                {% endif %}
                 </ul>
 
 
@@ -102,16 +106,20 @@
                     {% endif %}
                 {% endfor %}
                 <ul class="nav nav-pills justify-content-center">
-                    <li class="previous{% if not prev_url_conn %} disabled{% endif %}">
+                {% if prev_url_conn %}
+                    <li class="previous disabled">
                         <a class="nav-item nav-link" href="{{ prev_url_conn or '#' }}">
-                            <span aria-hidden="true"></span> Newer Suggestions
+                            <span aria-hidden="true"></span> Previous
                         </a>
                     </li>
-                    <li class="next{% if not next_url_conn %} disabled{% endif %}">
-                        <a class="nav-item nav-link" href="{{ next_url_conn or '#' }}"> Older Suggestions <span
+                {% endif %}
+                {% if next_url_conn %}
+                    <li class="next disabled">
+                        <a class="nav-item nav-link" href="{{ next_url_conn or '#' }}"> Next <span
                                 aria-hidden="true"></span>
                         </a>
                     </li>
+                {% endif %}
                 </ul>
 
             </div>
