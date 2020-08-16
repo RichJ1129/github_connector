@@ -22,6 +22,8 @@
                 </ul>
             </div>
             <div class="col-sm-5">
+                <h4>Posts</h4>
+
                 {% for post in posts %}
                     {% include '_post.html' %}
                     {% if current_user.has_liked_post(post) %}
