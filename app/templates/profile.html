@@ -84,12 +84,13 @@
 
                 <div class="btn-group" role="group" aria-label="Basic example">
                     {% if prev_url %}
-                    <button type="button" class="btn btn-secondary" href="{{ prev_url or '#' }}">Prev</button>
-                    {% endif %}
-                                    {% if next_url %}
 
-                    <button type="button" class="btn btn-secondary"  href="{{ next_url or '#' }}">Next</button>
-                                    {% endif %}
+                        <a type="button" class="btn btn-secondary" href="{{ prev_url or '#' }}">Prev</a>
+                    {% endif %}
+                    {% if next_url %}
+
+                        <a type="button" class="btn btn-secondary" href="{{ next_url or '#' }}">Next</a>
+                    {% endif %}
 
                 </div>
 
